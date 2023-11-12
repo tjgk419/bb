@@ -94,7 +94,7 @@ var paintMouseMoveAction = {
 
 var pos = {
   isDraw: false,
-  color: "red",
+  color: "sky",
   colorIdx: 0,
   drawMode: 0,
   filled: false,
@@ -243,16 +243,16 @@ function mouseListener(event) {
 function selectColor(choosedColor) {
   console.log("selectColor:" + choosedColor);
   var colorTableIdx = {
-    red: 0,
-    orange: 1,
-    yellow: 2,
-    green: 3,
-    blue: 4,
-    lightblue: 5,
-    lightgreen: 6,
-    brown: 7,
-    purple: 8,
-    pink: 9,
+    sky: 0,
+    cloud: 1,
+    Babypink: 2,
+    yellow: 3,
+    green: 4,
+    skyblue: 5,
+    orange: 6,
+    mint: 7,
+    lightorange: 8,
+    purple: 9,
     gray: 10,
     lightgray: 11,
     black: 12,
@@ -708,7 +708,7 @@ function ellipseMouseMove(event) {
 
   cvs.clearRect(0, 0, canvas.width, canvas.height);
   cvs.drawImage(bufCanvas, 0, 0);
-  cvs.strokeStyle = "black";
+  cvs.strokeStyle = "sky";
 
   var ellipse = {
     X: Math.round((pos.X + currentPos.X) / 2),
@@ -806,7 +806,7 @@ function initHistory() {
 
   var newColor = drwaCommand();
   newColor.mode = "color";
-  newColor.color = "red";
+  newColor.color = "sky";
   commandHistory.push(newColor.toCommand());
   addHistory(newColor.toCommand());
 }

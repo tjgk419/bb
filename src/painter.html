@@ -3,11 +3,154 @@
     <title>COOING</title>
      <!-- favicon 링크 -->
      <link rel="shortcut icon" href="img/logo2.ico" type="image/x-icon">
-      <!-- 외부 CSS링크 -->
-      <link rel="stylesheet" type="text/css" href="css/style_paint.css">
+      <!-- 외부 CSS링크
+      <link rel="stylesheet" type="text/css" href="css/style_paint.css"> -->
     <style>
+      @charset "UTF-8";
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@900&display=swap');
+      @font-face {
+        font-family: 'Dovemayo_gothic';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Dovemayo_wild';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/Dovemayo_wild.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @media ( max-width: 767px ){
+
+      }
+      @media ( min-width: 768px ) and ( max-width: 991px ){
+
+      }
+      @media ( min-width: 992px ) and ( max-width: 1199px ){
+
+      }
+      @media ( min-width: 1200px ){
+          
+      }
+
+      /* ====reset css====*/
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      a {
+          text-decoration: none;
+      }
+      ul, ol {
+          list-style: none;
+      }
+      body {
+          font-family: 'Dovemayo_gothic', sans-serif;
+          font-size: 1.5em;
+      }
+      .inner {
+          width: 1180px;
+          margin: 0 auto;
+      }
+      hr {
+        display:block;
+        height:1px;
+        border:0;
+        margin:0;
+        padding:0;
+      }
+
+      /*==== header 영역 =====*/
+      header{
+          width: 100%;
+          background: none;
+      }
+      header .inner {
+          width: 70%;
+          height: 0;
+          margin: 0 auto;
+          display: flex;                     /* 가로배열 */
+          justify-content: space-between;   /* 양끝에 맞춤 */
+          align-items: center;              /* 로고와 탑메뉴 높이의 중앙 맞춤 */
+          padding-top: 0px;
+      }
+      header .inner h1 {
+          width: 75px;
+      }
+      header .inner h1 a img {
+          width: 170%;
+          position: relative;
+          z-index: 3;
+          margin-top: 200px;
+          left: 85px;
+      }
+
+      /* header - gnb */
+      header .inner #gnb {
+          position: absolute;
+          top: 30px;
+          right: 370px;
+          padding: 0;
+          margin: 0;
+          z-index: 2;
+      }
+      header .inner #gnb ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          background: none; /* Remove background */
+      }
+      header .inner #gnb li {
+          float: left;
+      }
+      header .inner #gnb li a {
+          display: block;
+          font-size: 1.0rem;
+          font-weight: 500;
+          color: #fff;
+          padding: 30px 18px;
+          transition: all 0.3s;
+          font-family: NotoSans;
+          font-weight: medium;
+          letter-spacing: -0.4px;
+      }
+      header .inner #gnb li a:hover {
+          color: #F2A8C3;
+      }
+
+      /* ==== figure 영역 ======== */
+      figure {
+          width: 100%;
+          /* height: calc(100vh + 100px); */
+          /* background: #fff; */
+          position: relative;
+          overflow: hidden;
+          padding-top: 200px;
+      } 
+
+      figure img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+}   
+
+      html {
+        background-color: #000;
+      }
+
       canvas {
-        border: 1px solid blue;
+        border: 3px solid #274D8C;
+        /* width: 1500px;
+        height: 500px; */
+        margin-right: 20px;
+        margin-left: 20px;
+        background-color: #fff;
       }
 
       .jb_table {
@@ -15,18 +158,82 @@
       }
 
       .row {
-        border-radius: 10px;
+        border-radius: 50px;
         display: table-row;
+        margin: 20px;
       }
 
       .cell {
         display: table-cell;
         vertical-align: top;
+        color: #fff;
+      }
+
+      .cell INPUT {
+        display: block;
+        margin: 0;
+        font-family: 'NotoSans';
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        color: #333333;
+        letter-spacing: 0.8px;
       }
 
       textarea {
         background-color: #fcf3cf;
+        border-radius: 50px;
       }
+
+      
+
+      /* 푸터 스타일 */
+      footer {
+     text-align: center; /* 텍스트 가운데 정렬 */
+
+      color: #fff; /* 글자색 설정 */
+      padding: 10px 0; /* 위아래 여백 설정 */
+      padding-bottom: 0; /* 푸터 아래 여백 제거 */
+      position: relative; 
+      /* 상대 위치 설정 */
+      /* z-index: 2;  */
+      /* 푸터를 다른 요소 위에 표시 */
+      
+      }
+      /* 로고 스타일 */
+      footer .logo img {
+          display: block;
+          margin: 0 auto;
+          max-width: 100px; /* 원하는 크기로 조절 */
+          height: auto; /* 가로 세로 비율 유지 */
+          position: absolute; /* 절대 위치 설정 */
+          z-index: 1;
+          top: 200px;
+          left: 0;
+          right: 0;
+      }
+
+      footer .email p {
+          margin-top: 10px; /* 로고와의 간격 조정 */
+          z-index: 10;
+          font-size: 14px; /* 원하는 크기로 조절 */
+          font-family: 'NotoSans';
+          position: relative;
+          color: #fff;
+          padding-bottom: 50px;
+      }
+
+      /* 카피라이트 위치 조정 */
+      footer .copyright p {
+          font-size: 12px; /* 원하는 크기로 조절 */
+          font-family: 'NotoSans';
+          position: absolute; /* 절대 위치 설정 */
+          top: 280px; /* 로고와의 간격 조정 (원하는 값으로 조절) */
+          left: 0;
+          right: 0;
+          z-index: 20; /* 다른 요소보다 위에 표시될 z-index 값 설정 */
+          transform: translate(0%, -50%);
+      }
+
     </style>
     <script language="JavaScript">
       // Date: 2019.04.24
@@ -196,6 +403,11 @@
           </ul>
       </div>
   </header>
+
+  <!-- figure 영역 -->
+<figure class="main_vis">
+  <img src="img/Banner.png"></img>
+</figure>
   
     <div class="jb_table">
       <div class="row">
@@ -204,32 +416,32 @@
             <div class="jb_table">
               <div class="row">
                 <span class="cell">
-                  <img src="img/red.png" onclick="selectColor('red')" />
-                  <img src="img/orange.png" onclick="selectColor('orange')"/>
+                  <img src="img/sky.png" onclick="selectColor('#274D8C')" />
+                  <img src="img/cloud.png" onclick="selectColor('#798FC8')"/>
                 </span>
               </div>
               <div class="row">
                 <span class="cell">
-                  <img src="img/yellow.png" onclick="selectColor('yellow')" />
-                  <img src="img/green.png" onclick="selectColor('green')"/>
+                  <img src="img/Babypink.png" onclick="selectColor('#F3A8C3')" />
+                  <img src="img/yellow.png" onclick="selectColor('#FCD30E')"/>
                 </span>
               </div>
               <div class="row">
                 <span class="cell">
-                  <img src="img/blue.png" onclick="selectColor('blue')" />
-                  <img src="img/lightblue.png" onclick="selectColor('lightblue')" />
+                  <img src="img/green.png" onclick="selectColor('#71C275')" />
+                  <img src="img/skyblue.png" onclick="selectColor('#6ECBD4')" />
                 </span>
               </div>
               <div class="row">
                 <span class="cell">
-                  <img src="img/lightgreen.png" onclick="selectColor('lightgreen')"/>
-                  <img src="img/brown.png" onclick="selectColor('brown')"/>
+                  <img src="img/orange.png" onclick="selectColor('#F37621')"/>
+                  <img src="img/mint.png" onclick="selectColor('#58A79C')"/>
                 </span>
               </div>
               <div class="row">
                 <span class="cell">
-                  <img src="img/purple.png" onclick="selectColor('purple')" />
-                  <img src="img/pink.png" onclick="selectColor('pink')"/>
+                  <img src="img/lightorange.png" onclick="selectColor('#F9D3AC')" />
+                  <img src="img/purple.png" onclick="selectColor('#CAAFCD')"/>
                 </span>
               </div>
               <div class="row">
@@ -291,18 +503,19 @@
         </span>
         <span class="cell">
           <div>
-            <canvas id="canvas" width="720" height="720"></canvas>
+            <canvas id="canvas" width="1400" height="720"></canvas>
+            <!-- <div class="canvas pointer fine">fine</div> -->
           </div>
         </span>
         <span class="cell">
           <INPUT type="file" id="load_filename" value="Load" onChange="loadFile()" />
-          <div>Title <input id="title" size="15" /></div>
+          <div>초점책의 제목을 지어주세요! <input id="title" size="15" /></div>
           <div>
             <a id="saveImage" download="image.png">
-                <INPUT type="button" value="Save" onClick="saveImage()" />
+                <INPUT type="button" value="저장하기" onClick="saveImage()" />
             </a>
-            <INPUT type="button" value="Clear" onClick="initPage()" />
-            <INPUT type="button" value="History" onClick="showHistory()" />
+            <INPUT type="button" value="그림 다시 그리기" onClick="initPage()" />
+            <INPUT type="button" value="작업 기록" onClick="showHistory()" />
           </div>
           <div>
             <input type="button" value="Save as Json" onClick="SaveAsJson()" />
@@ -321,5 +534,19 @@
     </div>
     <script src="painter.js"></script>
     <script src="drawengine.js"></script>
+
+    <!-- footer 영역 -->
+    <footer>
+      <!-- copyright 및 주소 -->
+      <div class="copyright">
+          <div class="logo">
+              <img src="img/white_logo.png" alt="로고">
+          </div>
+          <div class="email">
+              <p>Copyright &copy; 2023. All Right Reserved.</p>
+          </div>
+      </div>
+  </footer>
+
   </body>
 </html>
